@@ -3,8 +3,21 @@ function Queen() {
   var tasksPeriorities = [];
   //Private ------------------------------------------------------------------------------------------------------
   function assignTask(ant) {
-    for (let task = 0; task < tasksPeriorities.length; task++) {
-      var taskPeriority = tasksPeriorities[task];
+    var task = null;
+    if (tasksPeriorities.length > 0) {
+      task = tasksPeriorities[nextTaskIndex];
+      nextTaskIndex = ++nextTaskIndex % tasksPeriorities.length;
+    }
+
+    ant.path = [];
+    if (getLocationType(task) == LOCATION_TYPE.RESOURCE) {
+      ant.path.push(LOCATIONS.STORE);
+      ant.path.push(task);
+      ant.getResources = false;
+    } else if (getLocationType(task) == LOCATION_TYPE.BUILDING) {
+      ant.path.push(task);
+      ant.path.push(LOCATIONS.STORE);
+      ant.getResources = true;
     }
   }
 
@@ -34,10 +47,12 @@ function Queen() {
       tasksPeriorities.push(taskLocation);
     }
   };
-  this.decreasePeriority = function(resource) {
+  this.decreasePeriority = function(taskLocation) {
     if (countTasksType(taskLocation) > 0) {
       removeTask(taskLocation);
     }
   };
-  this.ImHere = function(Ant) {};
+  this.ImHere = function(Ant) {
+    assignTask(Ant);
+  };
 }
