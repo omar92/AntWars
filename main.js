@@ -1,10 +1,10 @@
-var game = new Phaser.Game(1200, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(1920, 1080, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 var testAntSprite
 
 
 //load assets
 function preload() {
-    game.load.image('background', 'assets/sprites/ant_map2.png');
+    game.load.image('background', 'assets/sprites/hossam2.png');
     game.load.image('test_ant', 'assets/sprites/test_ant.jpg');
 }
 
