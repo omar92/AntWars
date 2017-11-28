@@ -16,17 +16,17 @@ function Ant(antSprite) {
     this.position = game.add.sprite(600, 600, 'test_ant');
     this.moveNext = function() {
         if (this.path.length == 0) {
-            endPos = 5
+            endPos = 0.8
         } else {
             endPos = this.path.pop()
         }
     }
 
     this.update = function() {
-        currentPos += 0.1
+        currentPos += 0.01
         if (currentPos < endPos) {
-            this.position.y = Phaser.Math.linearInterpolation(this.rightPath.y, currentPos);
-            this.position.x = Phaser.Math.linearInterpolation(this.rightPath.x, currentPos);
+            this.position.y = Phaser.Math.linearInterpolation(this.leftPath.y, currentPos);
+            this.position.x = Phaser.Math.linearInterpolation(this.leftPath.x, currentPos);
         } else {
             this.moveNext()
         }

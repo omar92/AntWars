@@ -11,9 +11,9 @@ function preload() {
 //create objects
 function create() {
     game.add.sprite(0, 0, 'background');
-    testAnt = game.add.sprite(0, 0, 'test_ant');
     ant = new Ant();
     ant.moveNext()
+
 }
 
 //update and render
