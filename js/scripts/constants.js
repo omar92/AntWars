@@ -11,7 +11,13 @@ var LOCATIONS = {
     FOOD: 3,
     STONE: 4,
     STORE: 5
-}
+
+var RESOURCES_LOCATIONS = {
+  QUEEN: 0,
+  LAKE: 1,
+  WOOD: 2,
+  FOOD: 3
+};
 
 var LOCATION_TYPE = {
   ELSE: 0,
