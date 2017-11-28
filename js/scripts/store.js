@@ -3,21 +3,35 @@ var Store = function(){
                 var food = 1000;
                 var water = 1000;
                 var stone = 1000;
-                
-                this.imHere = function(ant, getResource){ //getResource is boolean
+                //var resources =[];
+                this.imHere = function(ant){ //getResource is boolean
                     currentResource = ant.resource;
-                    
+                   
+ /*                   
+                    if(resources[currentResource])
+                        resources[currentResource]++;
+                    else
+                        resources[currentResource]=1;
+    
+              */      
                     
                     switch(currentResource){
                             
                         case RESOURCES.FOOD: 
                             
-                            if(getResource){
+                            if(ant.getResource){
     
-                                if(isResAvailable(currentResource))
+                                if(isResAvailable(currentResource)){
                                     food--;
-                                else
+                                    ant.resource= RESOURCES.FOOD;
+                                    ant.path.pop();
+                                }
+                                else{
                                    alert("Food is not Available"); //Food is not Available
+                                    ant.path = [];
+                                    ant.resource = null;
+                                    
+                                }
                             }
                             else
                                 food++;
@@ -26,11 +40,18 @@ var Store = function(){
                             
                         case RESOURCES.WOOD:
                             
-                            if(getResource){
-                                if(isResAvailable(currentResource))
+                            if(ant.getResource){
+                                if(isResAvailable(currentResource)){
                                     wood--;
-                                else
+                                    ant.resource= RESOURCES.WOOD;
+                                    ant.path.pop();
+                                }
+                                else{
                                    alert("Wood is not Available"); //Wood is not Available
+                                    ant.path = [];
+                                    ant.resource = null;
+                                   
+                                }
                             }
                             else
                                 wood++;
@@ -38,11 +59,19 @@ var Store = function(){
                             break;
                             
                         case RESOURCES.STONE:
-                            if(getResource){
-                                if(isResAvailable(currentResource))
+                            if(ant.getResource){
+                                if(isResAvailable(currentResource)){
                                     stone--;
-                                else
+                                    ant.resource= RESOURCES.STONE;
+                                    ant.path.pop();
+                                }
+                                
+                                else{
                                    alert("Stone is not Available"); //Stone is not Available
+                                    ant.path = [];
+                                    ant.resource = null;
+                                    
+                                }
                             }
                             else
                                 stone++;
@@ -50,11 +79,18 @@ var Store = function(){
                             
                         case RESOURCES.WATER:
                             
-                            if(getResource){
-                                if(isResAvailable(currentResource))
+                            if(ant.getResource){
+                                if(isResAvailable(currentResource)){
                                     water--;
-                                else
-                                   alert("Water is not Available"); //Water is not Available
+                                    ant.resource= RESOURCES.WATER;
+                                    ant.path.pop();
+                                }
+                                else{
+                                    alert("Water is not Available"); //Water is not Available
+                                    ant.path = [];
+                                    ant.resource = null;
+                                }
+                                 
                             }
                 
                             else
@@ -64,35 +100,35 @@ var Store = function(){
                             
                                           }
                     
+                    ant.moveNext();
+                    
                 }
                 
                 
                 var isResAvailable = function(resource){
                     
+      
                     switch(resource){
                             
                         case RESOURCES.FOOD: 
                             
                             if(food != 0)
                                 return true;                          
-                            return false;
-    
+               
                             break;
                             
                         case RESOURCES.WOOD:
                             
                             if(wood != 0)
                                 return true;        
-                            return false;
-                            
+
                             break;
                             
                         case RESOURCES.STONE:
                             
                             if(stone != 0)
                                 return true;
-                            
-                            return false;
+
                             
                             break;
                             
@@ -100,15 +136,15 @@ var Store = function(){
                             
                             if(water != 0)
                                 return true;
-                            return false;
                             
                             break;
                             
                         default: return false;
-                            
-                            
+                                               
                             
                                    }
+                    return false;
                 }
                 
+                //lsa 3ayza 2afady el ant;
 }
