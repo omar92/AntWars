@@ -16,7 +16,7 @@ function Ant(antSprite) {
     this.position = game.add.sprite(600, 600, 'test_ant');
     this.moveNext = function() {
         if (this.path.length == 0) {
-            endPos = LOCATIONS.QUEEN
+            endPos = 5
         } else {
             endPos = this.path.pop()
         }
