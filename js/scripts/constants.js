@@ -10,7 +10,10 @@ var LOCATIONS = {
     WOOD: 2,
     FOOD: 3,
     STONE: 4,
-    STORE: 5
+    STORE: 5,
+    SOLDIERS_BUILDING_1: 6,
+    SOLDIERS_BUILDING_1: 7,
+    SOLDIERS_BUILDING_1: 8,
 }
 
 var LOCATION_TYPE = {
