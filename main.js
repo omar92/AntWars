@@ -2,12 +2,12 @@ var game = new Phaser.Game(1200, 600, Phaser.AUTO, '', { preload: preload, creat
 
 //load assets
 function preload() {
-
+    game.load.image('background', 'assets/sprites/ant_map2.png');
 }
 
 //create objects
 function create() {
-
+    game.add.sprite(0, 0, 'background');
 }
 
 //update and render
