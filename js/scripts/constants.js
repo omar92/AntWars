@@ -1,4 +1,5 @@
 var RESOURCES = {
+<<<<<<< HEAD
     STONE: 0,
     WATER: 1,
     WOOD: 2,
@@ -11,4 +12,3 @@ var LOCATIONS = {
     FOOD: 3,
     STONE: 4,
     STORE: 5
-};
