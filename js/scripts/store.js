@@ -13,10 +13,11 @@ var Store = function(){
                         case RESOURCES.FOOD: 
                             
                             if(getResource){
-                                
-                                //var isAvail = 
-                                //if(this.)
-                                food--;
+    
+                                if(isResAvailable(currentResource))
+                                    food--;
+                                else
+                                   alert("Food is not Available"); //Food is not Available
                             }
                             else
                                 food++;
@@ -25,25 +26,37 @@ var Store = function(){
                             
                         case RESOURCES.WOOD:
                             
-                            if(getResource)
-                                
-                                wood--;
+                            if(getResource){
+                                if(isResAvailable(currentResource))
+                                    wood--;
+                                else
+                                   alert("Wood is not Available"); //Wood is not Available
+                            }
                             else
                                 wood++;
                             
                             break;
                             
                         case RESOURCES.STONE:
-                            if(getResource)
-                                stone--;
+                            if(getResource){
+                                if(isResAvailable(currentResource))
+                                    stone--;
+                                else
+                                   alert("Stone is not Available"); //Stone is not Available
+                            }
                             else
                                 stone++;
                             break;
                             
                         case RESOURCES.WATER:
                             
-                            if(getResource)
-                                water--;
+                            if(getResource){
+                                if(isResAvailable(currentResource))
+                                    water--;
+                                else
+                                   alert("Water is not Available"); //Water is not Available
+                            }
+                
                             else
                                 water++;
                             
